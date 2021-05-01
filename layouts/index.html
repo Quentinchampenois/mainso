@@ -9,14 +9,14 @@
         </section>
         <hr>
         <section>
-                {{range where .Site.Pages "Draft" true}}
-                <div>
-                    {{- partial "metadata" . }}
+            {{ range first 5 (where .Site.Pages "Section" "post") }}
+            <div>
+                {{- partial "metadata" . }}
 
-                    <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                        <p>{{ .Summary | truncate 150 }}</p>
-                </div>
-                {{ end }}
+                <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Summary | truncate 150 }}</p>
+            </div>
+            {{ end }}
         </section>
     </main>
 {{ end }}
