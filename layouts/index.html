@@ -1,8 +1,11 @@
 {{ define "main" }}
     <main class="container">
-        <section class="row">
-            <div class="col-12 text-center">
+        <section class="row align-items-center justify-content-between">
+            <div class="col-12 col-md-6 text-center text-md-left">
                 <h1 class="title">{{ .Site.Title }}</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                {{- partial "header.html" . -}}
             </div>
         </section>
         <hr>
@@ -11,13 +14,13 @@
         </section>
         <hr>
         <section>
-                {{ range .Pages.ByPublishDate.Reverse }}
+                {{range where .Site.Pages "Draft" true}}
                 <div>
-                    {{ partial "metadata.html" . }}
+                    {{- partial "metadata" . }}
 
                     <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                    <a class="summary" href="{{ .RelPermalink }}">
-                        <p>{{ .Summary }}</p>
+                    <p class="summary">
+                        <p>{{ .Summary | truncate 150 }}</p>
                     </a>
                 </div>
                 {{ end }}
