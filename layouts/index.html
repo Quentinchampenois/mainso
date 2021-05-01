@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <main class="container">
+        <section class="row">
+            <div class="col-12 text-center">
+                <h1 class="title">{{ .Site.Title }}</h1>
+            </div>
+        </section>
+        <hr>
+        <section class="row">
+            {{- partial "resume" . }}
+        </section>
+        <hr>
+        <section>
+                {{ range .Pages.ByPublishDate.Reverse }}
+                <div>
+                    {{ partial "metadata.html" . }}
+
+                    <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <a class="summary" href="{{ .RelPermalink }}">
+                        <p>{{ .Summary }}</p>
+                    </a>
+                </div>
+                {{ end }}
+        </section>
+    </main>
+{{ end }}
