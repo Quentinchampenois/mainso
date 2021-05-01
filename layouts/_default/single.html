@@ -2,5 +2,14 @@
     <h1>{{ .Title }}</h1>
     {{ partial "metadata.html" . }}
     <br><br>
-    {{ .Content }}
+
+    <p>    {{ .Content }}
+    </p>
+
+    <p>
+        {{ $wordcounts := .Content | countwords }}
+        {{ $minutes := div $wordcounts 30 }}
+
+        {{ math.Ceil $minutes }} minutes to read
+    </p>
 {{ end }}

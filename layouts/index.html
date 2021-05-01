@@ -19,9 +19,7 @@
                     {{- partial "metadata" . }}
 
                     <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                    <p class="summary">
                         <p>{{ .Summary | truncate 150 }}</p>
-                    </a>
                 </div>
                 {{ end }}
         </section>
