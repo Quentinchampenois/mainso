@@ -1,5 +1,5 @@
 <div class="col-12">
-    <h3>Blog posts</h3>
+    <h3>{{ emojify ":books:" }} Blog posts</h3>
 
 </div>
 <div class="col-12">
@@ -17,5 +17,12 @@
 
             </div>
         {{ end }}
+    {{ end }}
+
+    {{ $robocop := (where .Site.Pages "Section" "blog") }}
+    {{ if gt (len $robocop) 5 }}
+        <div class="row">
+            <a class="btn btn-outline-dark col-4 offset-4" href="/blog">Voir tous les bails</a>
+        </div>
     {{ end }}
 </div>

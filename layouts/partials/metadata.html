@@ -3,15 +3,16 @@
 
 <div class="col">
     <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    {{ $wordcounts := .Content | countwords }}{{ $minutes := div $wordcounts 30 }}
+    <p class="text-muted">{{ math.Ceil $minutes }} minutes.</p>
 
-    <br>
+
     {{ with .Params.tags }}
         {{ range . }}
             {{ $href := print (absURL "tags/") (urlize .) }}
-            <p>{{ emojify ":sob:" }}</p>
             <a class="text-muted link--tag" href="{{ $href }}">{{ . }}</a>
-
         {{ end }}
     {{ end }}
+
 </div>
 
