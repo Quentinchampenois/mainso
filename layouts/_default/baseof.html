@@ -2,10 +2,7 @@
 <html lang="en">
     {{- partial "head" . -}}
     <body class="container">
-        <div class="row">
-            {{- partial "header" . -}}
-        </div>
-
+        {{- partial "header" . -}}
         <div id="content">
             <main>
                 {{- block "main" . }}{{- end }}
