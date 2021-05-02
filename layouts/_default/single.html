@@ -1,22 +1,20 @@
 {{ define "main" }}
-<main class="container">
-    <section class="heading">
-        <div class="row align-items-center justify-content-between">
-            {{- partial "header.html" . -}}
-        </div>
-        <div>
-            <h2>{{ .Title }}</h2>
-        </div>
-        <div>
-            {{ $wordcounts := .Content | countwords }}{{ $minutes := div $wordcounts 30 }}
-            {{ partial "metadata.html" . }}
+<section class="heading">
+    <div class="row align-items-center justify-content-between">
+        {{- partial "header.html" . -}}
+    </div>
+    <div>
+        <h2>{{ .Title }}</h2>
+    </div>
+    <div>
+        {{ $wordcounts := .Content | countwords }}{{ $minutes := div $wordcounts 30 }}
+        {{ partial "metadata.html" . }}
 
-            <p>{{ math.Ceil $minutes }} minutes to read</p>
-        </div>
-    </section>
+        <p>{{ math.Ceil $minutes }} minutes to read</p>
+    </div>
+</section>
 
-    <section class="content">
-        <p>{{ .Content }}</p>
-    </section>
-</main>
+<section class="content">
+    <p>{{ .Content }}</p>
+</section>
 {{ end }}
