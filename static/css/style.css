@@ -2,8 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@500&family=Catamaran&family=Exo+2:wght@300&family=IBM+Plex+Serif&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
 body {
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Abel', sans-serif;
     /* font-family: 'Inconsolata', monospace;*/
 }
 
@@ -17,4 +20,8 @@ header {
 
 .link--tag{
     text-decoration: underline;
+}
+
+.highlight > pre {
+    padding: 0px 40px;
 }
