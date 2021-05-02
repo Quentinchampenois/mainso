@@ -3,16 +3,7 @@
         {{- partial "resume" . }}
     </section>
     <hr>
-    <section>
-        {{ range first 3 (where .Site.Pages "Section" "blog") }}
-            {{ if ne .Title "Blogs"}}
-            <div>
-                {{- partial "metadata" . }}
-
-                <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                    <p>{{ .Summary | truncate 150 }}</p>
-            </div>
-            {{ end }}
-        {{ end }}
+    <section class="row">
+        {{- partial "blog_block" . }}
     </section>
 {{ end }}
