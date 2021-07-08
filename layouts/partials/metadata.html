@@ -1,18 +1,18 @@
 {{ $dateTime := .PublishDate.Format "2 Jan 2006 15:04" }}
 {{ $dateFormat := .Site.Params.dateFormat | default "2 Jan 2006" }}
 
-<div class="col">
-    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
-    {{ $wordcounts := .Content | countwords }}{{ $minutes := div $wordcounts 30 }}
-    <p class="text-muted">{{ math.Ceil $minutes }} minutes.</p>
+<div class="">
+    <div>
+        <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    </div>
 
-
-    {{ with .Params.tags }}
-        {{ range . }}
-            {{ $href := print (absURL "tags/") (urlize .) }}
-            <a class="text-muted link--tag" href="{{ $href }}">{{ . }}</a>
+    <div>
+        {{ with .Params.tags }}
+            {{ range . }}
+                {{ $href := print (absURL "tags/") (urlize .) }}
+                <a class="text-muted link--tag" href="{{ $href }}">{{ . }}</a>
+            {{ end }}
         {{ end }}
-    {{ end }}
-
+    </div>
 </div>
 
