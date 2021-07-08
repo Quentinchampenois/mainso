@@ -1,20 +1,17 @@
 <div class="col-12">
     <h3>{{ .Site.Params.sideTitle }}</h3>
-
 </div>
 <div class="col-12">
     {{ range first 6 (where .Site.Pages "Section" "blog") }}
         {{ if ne .Title "Blogs"}}
             <div class="content-block--item p-2 my-2 row">
-                <div class="col">
+                <div class="col-2">
                     {{- partial "metadata" . }}
                 </div>
-
-                <div class="col-10">
+                <div class="col-9 offset-1">
                     <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                     <p>{{ .Summary | truncate 150 }}</p>
                 </div>
-
             </div>
         {{ end }}
     {{ end }}
