@@ -1,12 +1,9 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Work+Sans&family=Zen+Dots&display=swap');*/
-
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@500&family=Catamaran&family=Exo+2:wght@300&family=IBM+Plex+Serif&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 body {
-    font-family: 'Abel', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
