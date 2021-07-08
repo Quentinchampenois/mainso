@@ -7,11 +7,14 @@
 
 body {
     font-family: 'Abel', sans-serif;
-    /* font-family: 'Inconsolata', monospace;*/
 }
 
 header {
     border-bottom: solid;
+}
+
+#content {
+    min-height: 80vh;
 }
 
 .content-block--item {
