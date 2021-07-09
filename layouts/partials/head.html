@@ -13,4 +13,19 @@
     {{ $title := print .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
+
+    <style>
+        a, a:hover {
+            color: {{ .Site.Params.links_color }};
+        }
+        body {
+            background-color: {{ .Site.Params.background_color }};
+        }
+        h* {
+            color: {{ .Site.Params.titles_color }};
+        }
+        p {
+            color: {{ .Site.Params.paragraphs_color }};
+        }
+    </style>
 </head>
